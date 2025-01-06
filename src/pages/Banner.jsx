@@ -6,6 +6,7 @@ import Instructors from '../components/Instructors'
 import OnlineExam from '../components/OnlineExam'
 import EmployabilityTools from '../components/EmployabilityTools'
 import CorporateTraining from '../components/CorporateTraining'
+import OurBlog from '../components/OurBlog'
 
 const Banner = () => {
   return (
@@ -18,6 +19,7 @@ const Banner = () => {
       <OnlineExam />
       <EmployabilityTools />
       <CorporateTraining />
+      <OurBlog />
     </div>
   )
 }
