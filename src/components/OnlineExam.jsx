@@ -1,10 +1,12 @@
 import bgImg from '../assets/images/onlinexmBg.png'
 import { motion } from 'framer-motion'
+import img1 from '../assets/images/img1.png'
+import img2 from '../assets/images/img2.png'
 
 const OnlineExam = () => {
   return (
     <div
-      className='bg-black py-[300px] text-white font-aeonik flex w-full '
+      className='bg-black py-[300px] text-white font-aeonik flex w-full relative'
       style={{
         backgroundImage: `url(${bgImg})`,
         backgroundSize: 'cover',
@@ -55,6 +57,17 @@ const OnlineExam = () => {
           </motion.p>
         </div>
         <div></div>
+      </div>
+
+      <div className='absolute right-0 bottom-32'>
+        <div className='w-[200px]'>
+          <img src={img1} alt='' />
+        </div>
+      </div>
+      <div className='absolute right-0 bottom-5'>
+        <div className='w-[300px]'>
+          <img src={img2} alt='' />
+        </div>
       </div>
     </div>
   )
