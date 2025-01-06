@@ -57,6 +57,16 @@ const OnlineExam = () => {
               CIFA student's identity without the need to be present in a
               physical test centre giving CIFA students complete flexibility.
             </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.8, delay: 0.9 }}
+            >
+              <button className='bg-[#C1B27D99] mt-10 capitalize border border-[#C1B27DB2] rounded-xl px-6 py-2 hover:bg-transparent transform duration-300'>
+                learn more
+              </button>
+            </motion.div>
           </div>
           <div></div>
         </div>
