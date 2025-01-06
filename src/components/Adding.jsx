@@ -24,7 +24,7 @@ const Adding = () => {
               transition={{ duration: 0.5, delay: 0.3 }}
               className='bg-[#48361980] px-2 md:px-5 py-1 mb-5 leading-6 rounded-full text-[16px] border border-[#483619d5] bg-gradient-to-r from-white via-[#C1B27D] to-white text-transparent bg-clip-text'
             >
-              online exams!
+              Who is CIFA?
             </motion.button>
             <motion.h1
               initial={{ opacity: 0, x: -50 }}
