@@ -4,6 +4,7 @@ import Courses from '../components/Courses'
 import Certified from '../components/Certified'
 import Instructors from '../components/Instructors'
 import OnlineExam from '../components/OnlineExam'
+import EmployabilityTools from '../components/EmployabilityTools'
 
 const Banner = () => {
   return (
@@ -14,6 +15,7 @@ const Banner = () => {
       <Certified />
       <Instructors />
       <OnlineExam />
+      <EmployabilityTools />
     </div>
   )
 }
