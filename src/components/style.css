@@ -1,0 +1,7 @@
+.effect {
+    position: absolute;
+    background: linear-gradient(90deg, #000 10%, rgba(0, 0, 0, 0) 100%);
+    z-index: 10;
+    pointer-events: none;
+  }
+  
