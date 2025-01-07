@@ -39,12 +39,6 @@ const Instructors = () => {
     }
   ]
 
-  // Define variants for the card animation
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.6 } }
-  }
-
   // Define staggered animation for the grid
   const gridVariants = {
     hidden: {},
@@ -66,17 +60,17 @@ const Instructors = () => {
       <div className='container py-20 px-8 xl:px-0'>
         <div>
           <motion.h1
+            whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6 }}
             className='text-[56px] font-medium font-aeonik text-center leading-[64px]'
           >
             Instructors
           </motion.h1>
           <motion.p
+            whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
+            transition={{ duration: 0.7 }}
             className='text-[20px] text-center leading-8 text-[#ffffff9a] mt-5'
           >
             Continuing professional development at its finest!
@@ -96,66 +90,97 @@ const Instructors = () => {
               <motion.div
                 key={id}
                 className='rounded-3xl border border-[#393117] shadow-md relative'
-                variants={cardVariants}
+                whileInView={{ opacity: 1, y: 0 }}
+                initial={{ opacity: 0, y: 20 }}
+                transition={{ duration: 0.6 }}
               >
                 {/* Gradient Overlay */}
                 <div className='absolute inset-0 bg-gradient-to-t from-black to-transparent z-10 rounded-3xl'></div>
                 <div>
                   <div className='mt-10'>
                     {/* Image */}
-                    <img
+                    <motion.img
                       src={img}
                       alt={name}
                       className='w-full mx-auto h-[370px] z-0 relative'
+                      whileInView={{ opacity: 1 }}
+                      initial={{ opacity: 0 }}
+                      transition={{ duration: 0.6 }}
                     />
                   </div>
 
                   {/* Content */}
                   <div className='px-10 py-10 relative z-10'>
                     {/* Name */}
-                    <h2 className='text-[28px] font-medium mb-2'>{name}</h2>
+                    <motion.h2
+                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.6 }}
+                      className='text-[28px] font-medium mb-2'
+                    >
+                      {name}
+                    </motion.h2>
                     {/* education */}
-                    <h2 className='text-[16px] text-[#ffffff85] mb-2'>
+                    <motion.h2
+                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.6 }}
+                      className='text-[16px] text-[#ffffff85] mb-2'
+                    >
                       Education
-                    </h2>
+                    </motion.h2>
 
                     {/* Education */}
-                    <div className='text-sm flex flex-wrap gap-3 items-center text-[#C1B27D] text-[12px] '>
+                    <div className='text-sm flex flex-wrap gap-3 items-center text-[#C1B27D] text-[12px]'>
                       {education
                         .slice(0, showAll ? education.length : 2)
                         .map((edu, index) => (
-                          <p
+                          <motion.p
                             key={index}
                             className='mt-1 border px-2 py-1 rounded-full border-[#c1b27d67] bg-[#393117c2]'
+                            whileInView={{ opacity: 1, y: 0 }}
+                            initial={{ opacity: 0, y: 20 }}
+                            transition={{ duration: 0.6 }}
                           >
                             {edu}
-                          </p>
+                          </motion.p>
                         ))}
 
                       {!showAll && education.length > 2 && (
-                        <p
+                        <motion.p
                           onClick={() => setShowAll(true)}
                           className='text-white text-[16px] cursor-pointer'
+                          whileInView={{ opacity: 1 }}
+                          initial={{ opacity: 0 }}
+                          transition={{ duration: 0.6 }}
                         >
                           +{education.length - 3} more
-                        </p>
+                        </motion.p>
                       )}
 
                       {showAll && (
-                        <p
+                        <motion.p
                           onClick={() => setShowAll(false)}
                           className='mt-3 text-white cursor-pointer text-[16px]'
+                          whileInView={{ opacity: 1 }}
+                          initial={{ opacity: 0 }}
+                          transition={{ duration: 0.6 }}
                         >
                           Show less
-                        </p>
+                        </motion.p>
                       )}
                     </div>
 
                     {/* View Profile Button */}
-                    <button className='mt-4 text-white rounded flex items-center'>
+                    <motion.button
+                      className='mt-4 text-white rounded flex items-center'
+                      whileInView={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0, y: 20 }}
+                      transition={{ duration: 0.6 }}
+                    >
                       View Profile
                       <FaAngleRight />
-                    </button>
+                    </motion.button>
                   </div>
                 </div>
               </motion.div>
@@ -164,9 +189,14 @@ const Instructors = () => {
         </motion.div>
 
         <div className='flex justify-center items-center mt-10'>
-          <button className='bg-[#C1B27D99] capitalize border border-[#C1B27DB2] rounded-xl px-6 py-2 hover:bg-transparent transform duration-300'>
+          <motion.button
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 20 }}
+            transition={{ duration: 0.6 }}
+            className='bg-[#C1B27D99] capitalize border border-[#C1B27DB2] rounded-xl px-6 py-2 hover:bg-transparent transform duration-300'
+          >
             learn more
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
