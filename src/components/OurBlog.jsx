@@ -1,4 +1,3 @@
-
 import img1 from '../assets/images/ourBlog/img1.png'
 import img2 from '../assets/images/ourBlog/img2.png'
 import img3 from '../assets/images/ourBlog/img3.png'
@@ -82,89 +81,105 @@ const OurBlog = () => {
       {/* Content */}
       <div className='container py-20 px-8 xl:px-0'>
         <div>
+          {/* Main Heading with Scroll Animation */}
           <motion.h1
+            whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.5 }}
             className='text-[56px] font-medium font-aeonik text-center leading-[64px]'
           >
             Our Blog
           </motion.h1>
+
+          {/* Subheading with Scroll Animation */}
           <motion.p
+            whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.7 }}
             className='text-[20px] text-center leading-8 text-[#ffffff9a] mt-5'
           >
-            check out our latest blogs here
+            Check out our latest blogs here
           </motion.p>
         </div>
 
-        {/* Cards Section */}
+        {/* Cards Section with Scroll Animation */}
         <motion.div
           className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 justify-center gap-5 mt-10'
           variants={gridVariants}
           initial='hidden'
-          animate='visible'
+          whileInView='visible'
         >
-          {data.map(({ id, img, title, related, date }) => {
-            return (
-              <motion.div key={id} variants={cardVariants}>
-                <div>
-                  <div className='mt-10'>
-                    {/* Image */}
-                    <img
-                      src={img}
-                      alt={title}
-                      className='w-full mx-auto h-[370px] '
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div className='px-2 pt-3'>
-                    {/* title */}
-                    <div className='flex justify-between items-center'>
-                      <h2 className='text-[14px] text-[#ffffffdc] font-medium mb-2'>
-                        {title}
-                      </h2>
-                      <div className='flex items-center gap-1 text-[#ffffff81] text-[13px]'>
-                        <MdDateRange className='text-lg' />
-                        {date}
-                      </div>
-                    </div>
-
-                    <div className='flex items-center  gap-10 mt-2'>
-                      <p className='capitalize text-[#ffffff8c] text-[16px]'>
-                        related to:
-                      </p>
-                      <div className='text-sm flex flex-wrap gap-3 items-center text-[#C1B27D] text-[12px] '>
-                        {related.map((edu, index) => (
-                          <p
-                            key={index}
-                            className='mt-1 border px-5 py-1 rounded-full border-[#c1b27d67] bg-[#393117c2]'
-                          >
-                            {edu}
-                          </p>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* View Profile Button */}
-                    <button className='mt-4 text-[#C1B27D] rounded flex items-center'>
-                      Read More
-                      <FaAngleRight />
-                    </button>
-                  </div>
+          {data.map(({ id, img, title, related, date }) => (
+            <motion.div key={id} variants={cardVariants}>
+              <div>
+                <div className='mt-10'>
+                  {/* Image with Scroll Animation */}
+                  <motion.img
+                    src={img}
+                    alt={title}
+                    className='w-full mx-auto h-[370px]'
+                    whileInView={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    transition={{ duration: 0.5 }}
+                  />
                 </div>
-              </motion.div>
-            )
-          })}
+
+                {/* Content */}
+                <div className='px-2 pt-3'>
+                  {/* Title */}
+                  <div className='flex justify-between items-center'>
+                    <h2 className='text-[14px] text-[#ffffffdc] font-medium mb-2'>
+                      {title}
+                    </h2>
+                    <div className='flex items-center gap-1 text-[#ffffff81] text-[13px]'>
+                      <MdDateRange className='text-lg' />
+                      {date}
+                    </div>
+                  </div>
+
+                  {/* Related */}
+                  <div className='flex items-center gap-10 mt-2'>
+                    <p className='capitalize text-[#ffffff8c] text-[16px]'>
+                      related to:
+                    </p>
+                    <div className='text-sm flex flex-wrap gap-3 items-center text-[#C1B27D] text-[12px]'>
+                      {related.map((edu, index) => (
+                        <p
+                          key={index}
+                          className='mt-1 border px-5 py-1 rounded-full border-[#c1b27d67] bg-[#393117c2]'
+                        >
+                          {edu}
+                        </p>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Read More Button */}
+                  <motion.button
+                    whileInView={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                    className='mt-4 text-[#C1B27D] rounded flex items-center'
+                  >
+                    Read More
+                    <FaAngleRight />
+                  </motion.button>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
+        {/* View More Button */}
         <div className='flex justify-center items-center mt-10'>
-          <button className='bg-[#C1B27D99] capitalize border border-[#C1B27DB2] rounded-xl px-6 py-2 hover:bg-transparent transform duration-300'>
+          <motion.button
+            whileInView={{ opacity: 1 }}
+            initial={{ opacity: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
+            className='bg-[#C1B27D99] capitalize border border-[#C1B27DB2] rounded-xl px-6 py-2 hover:bg-transparent transform duration-300'
+          >
             View more
-          </button>
+          </motion.button>
         </div>
       </div>
     </div>
