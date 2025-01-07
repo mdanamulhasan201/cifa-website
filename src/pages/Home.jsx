@@ -28,9 +28,9 @@ const Home = () => {
         <div className='container flex flex-col items-center sm:items-start px-8 xl:px-0'>
           {/* Animated Button */}
           <motion.button
+            whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: -20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.3 }}
+            transition={{ duration: 0.5 }}
             className='bg-[#48361980] px-5 py-1 font-aeonik rounded-full text-[16px] border border-[#483619d5] bg-gradient-to-r from-white via-[#C1B27D] to-white text-transparent bg-clip-text'
           >
             Elevate Your Career
@@ -38,9 +38,9 @@ const Home = () => {
 
           {/* Animated Heading */}
           <motion.h1
+            whileInView={{ opacity: 1, x: 0 }}
             initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.5 }}
+            transition={{ duration: 0.6 }}
             className='text-[45px] text-center sm:text-start sm:text-[80px] leading-[50px] sm:leading-[88px] font-semibold'
           >
             Transform <br /> Your{' '}
@@ -51,9 +51,9 @@ const Home = () => {
 
           {/* Animated Paragraph */}
           <motion.p
+            whileInView={{ opacity: 1, y: 0 }}
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.7 }}
+            transition={{ duration: 0.7 }}
             className='w-full md:w-[450px] xl:w-[550px] pt-10 text-[20px] text-center sm:text-start'
           >
             Earn accredited qualifications online with CIFA and access tools to
@@ -62,9 +62,9 @@ const Home = () => {
 
           {/* Animated Buttons and Link */}
           <motion.div
+            whileInView={{ opacity: 1, scale: 1 }}
             initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.9 }}
+            transition={{ duration: 0.8 }}
             className='flex pt-10 items-center gap-2'
           >
             <button className='bg-[#C1B27D99] text-[16px] capitalize border border-[#C1B27DB2] rounded-xl px-2 sm:px-6 py-2 hover:bg-transparent transform duration-300'>

@@ -23,9 +23,7 @@ const Courses = () => {
   const CustomArrow = ({ direction, onClick }) => (
     <button
       onClick={onClick}
-      className={`absolute z-10 top-1/2 transform -translate-y-1/2 ${
-        direction === 'next' ? 'right-4' : 'left-4'
-      } w-10 h-10 flex items-center justify-center rounded-full bg-black/80 border border-white hover:bg-black/60 transition-colors duration-300`}
+      className={`absolute z-10 top-1/2 transform -translate-y-1/2 ${direction === 'next' ? 'right-4' : 'left-4'} w-10 h-10 flex items-center justify-center rounded-full bg-black/80 border border-white hover:bg-black/60 transition-colors duration-300`}
     >
       <span className='text-white text-xl'>
         {direction === 'next' ? (
@@ -41,9 +39,7 @@ const Courses = () => {
   const CustomDot = ({ index, onClick, active }) => (
     <button
       onClick={onClick}
-      className={`mx-1 w-2 h-2 rounded-full transition-all duration-300 ${
-        active ? 'bg-[#fccf2b] w-4' : 'bg-gray-400'
-      }`}
+      className={`mx-1 w-2 h-2 rounded-full transition-all duration-300 ${active ? 'bg-[#fccf2b] w-4' : 'bg-gray-400'}`}
     />
   )
 
@@ -59,9 +55,7 @@ const Courses = () => {
     prevArrow: <CustomArrow direction='prev' />,
     customPaging: function (i) {
       return (
-        <div
-          className={`mx-1 h-2 rounded-full transition-all duration-300 cursor-pointer`}
-        >
+        <div className={`mx-1 h-2 rounded-full transition-all duration-300 cursor-pointer`}>
           <div className='h-2 w-2 bg-gray-400 rounded-full hover:bg-[#fccf2b] transition-all duration-300' />
         </div>
       )
@@ -113,9 +107,10 @@ const Courses = () => {
               <motion.div
                 key={course.id}
                 className='px-5'
+                whileInView={{ opacity: 1, scale: 1 }}
                 initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 0.5, delay: course.id * 0.3 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: false }}
                 whileHover={{ scale: 1.05 }}
               >
                 <div className='rounded-xl bg-white/5 p-2 overflow-hidden transition-transform hover:scale-105 duration-300'>
@@ -129,14 +124,7 @@ const Courses = () => {
             ))}
           </Slider>
         </div>
-        {/* <div className='flex justify-center items-center mt-14 gap-10'>
-          <button className=' w-10 h-10 flex items-center justify-center rounded-full bg-black/80 border border-white hover:bg-black/60 transition-colors duration-300'>
-            <MdOutlineKeyboardArrowRight />
-          </button>
-          <button className=' w-10 h-10 flex items-center justify-center rounded-full bg-black/80 border border-white hover:bg-black/60 transition-colors duration-300'>
-            <MdKeyboardArrowLeft />
-          </button>
-        </div> */}
+
         <div className='text-center mt-20'>
           <button className='bg-[#C1B27D99] border border-[#C1B27DB2] text-white px-8 py-3 rounded-xl hover:bg-transparent transition-colors duration-300'>
             View All Courses

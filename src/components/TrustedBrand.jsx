@@ -15,7 +15,7 @@ const TrustedBrand = () => {
 
   
   const [ref, inView] = useInView({
-    threshold: 0.2, 
+    threshold: 0.1, 
   });
 
 
